@@ -1,0 +1,32 @@
+@import './../../sass/variables.scss';
+
+h1 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.LandingPage_main {
+    background-color: $background;
+}
+
+.LandingPage__listHeading .LandingPage__listItems {
+    font-size: 23px;
+    margin: 7px;
+    padding-top: 10px;
+}
+
+.LandingPage__list {
+    padding: 0px 40px 80px 40px;
+}
+
+.LandingPage__listHeading {
+    font-size: 110%;
+}
+
+.loginButton {
+    margin: 5px 5px 5px 0px;
+}
+
+.forgottenPasswordButton {
+    margin: 5px 5px 5px 0px;
+}

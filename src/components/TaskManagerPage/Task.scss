@@ -1,0 +1,14 @@
+@import './../../sass/variables.scss';
+
+.Task__entry {
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.Task__entry--incomplete {
+    color: $red;
+}
+
+.Task__entry--complete {
+    color: $blue;
+}

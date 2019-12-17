@@ -1,0 +1,28 @@
+@import './../sass/variables.scss';
+
+.navBar {
+    background-color: $header;
+}
+
+.NavHeader__title {
+    font-weight: bold;
+    color: $darkBlue;
+    font-size: 35px;
+    border: 2px solid $darkBlue;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.NavHeader__title:hover {
+    background-color: #8DAE9B;
+}
+
+.link {
+    color: $darkBlue;
+    font-weight: bold;
+}
+
+.link:hover {
+    border-bottom: 6px solid #8DAE9B;
+    // Make this a 1 second animation from the middle. 
+}

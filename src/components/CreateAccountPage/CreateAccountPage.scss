@@ -1,0 +1,17 @@
+@import './../../sass/variables.scss';
+
+h1 {
+    text-align: center;
+}
+
+.main {
+    background-color: $background;
+}
+
+.form {
+    padding: 30px;
+}
+
+h1 {
+    color: $darkBlue;
+}

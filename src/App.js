@@ -1,52 +1,47 @@
 import React from 'react';
-import './App.css';
-import request from 'request';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import './App.scss';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { MyProvider } from './StateComponents/MyProvider';
+import CreateAccountPage from './components/CreateAccountPage/CreateAccountPage';
+import LandingPage from './components/LandingPage/LandingPage';
+import TaskManager from './components/TaskManagerPage/TaskManagerPage';
+import ProfilePage from './components/ProfilePage/ProfilePage';
+import NavHeader from './components/NavHeader';
+import ForgottenPassword from './components/ForgottenPassword';
+import Footer from './components/Footer';
 
 class App extends React.Component {
-  // constructor(props) { // Useless Constructor
-  //   super(props);
-  // }
-
-  submitForm(e) {
-    e.preventDefault();
-    console.log('form submitted.')
-    request.post({
-      url: 'localhost:3000/users/login',
-      form: {
-        name: 'Test UserA',
-        email: 'rhuysen@gmail.com', 
-        age: 35,
-        password: 'asdjfhhwfweikh'
-      },
-      function(error, response, body) {
-        console.log('error', error);
-        console.log('response', response);
-        console.log('body', body);
-      }
-    })
-    // request.post('http://localhost:3000/users/login', (error, response, body) => {
-    //   console.log('error:', error);
-    //   console.log('statusCode:', response && response.statusCode)
-    //   console.log('body:', body)
-    // })
-  }
-  render() {
-    return (
-      <div className="App">
-        <form onSubmit={this.submitForm}>
-          <h1>Login Page</h1>
-          <p>Name and Surname</p>
-          <input type='text'></input>
-          <p>Age</p>
-          <input type='number'></input>
-          <p>Password</p>
-          <input type='password'></input>
-          <br></br>
-          <button type='submit'>Login</button>
-        </form>
-      </div>
-    );
-  }
+	render() {
+		console.log('env Variables');
+		console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+		console.log('process.env.REACT_APP_RUAN', process.env.REACT_APP_RUAN);
+		console.log('process.env.SOME_OTHER_NAME', process.env.SOME_OTHER_NAME)
+		return (
+			<MyProvider>
+				<div className="App">
+					<Router>
+						<NavHeader />
+						<link
+							rel="stylesheet"
+							href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+							integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+							crossOrigin="anonymous"
+						/>
+						<Switch>
+							<Route path="/" exact component={LandingPage} />
+							<Route path="/create-account" component={CreateAccountPage} />
+							<Route path="/task-manager" component={TaskManager} />
+							<Route path="/profile" component={ProfilePage} />
+							<Route path="/forgottenpassword" component={ForgottenPassword} />
+						</Switch>
+						<Footer />
+					</Router>
+				</div>
+			</MyProvider>
+		);
+	}
 }
 
 export default App;

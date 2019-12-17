@@ -1,0 +1,13 @@
+@import './../sass/variables.scss';
+
+.footer__copyright {
+    text-align: center;
+}
+
+.footer {
+    height: 40px;
+    position: fixed;
+    width: 100%;
+    background-color: $header;
+    bottom: 0%
+}

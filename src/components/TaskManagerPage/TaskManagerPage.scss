@@ -1,0 +1,11 @@
+@import './../../sass/variables.scss';
+
+h1 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.TaskManagerPage__main {
+    background-color: $background;
+    min-height: 80%
+}
