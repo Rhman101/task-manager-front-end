@@ -14,10 +14,7 @@ import Footer from './components/Footer';
 
 class App extends React.Component {
 	render() {
-		console.log('env Variables');
-		console.log('process.env.NODE_ENV', process.env.NODE_ENV);
-		console.log('process.env.REACT_APP_RUAN', process.env.REACT_APP_RUAN);
-		console.log('process.env.SOME_OTHER_NAME', process.env.SOME_OTHER_NAME)
+		console.log(`This is the ${process.env.NODE_ENV} build.`, process.env.NODE_ENV);
 		return (
 			<MyProvider>
 				<div className="App">

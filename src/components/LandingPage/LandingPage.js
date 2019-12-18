@@ -13,7 +13,7 @@ class LandingPage extends React.Component {
 		return (
 			<div className="LandingPage_main">
 				<Container className='LandingPage_mainContainer'>
-					<h1>_MERN Stack Boilerplate Project using a RESTful API: A Full-Stack Learning Project</h1>
+					<h1>MERN Stack Boilerplate Project using a RESTful API: A Full-Stack Learning Project</h1>
 					{!this.context.state.token ? (
 						<Login history={this.props.history} />
 					) : (
