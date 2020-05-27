@@ -10,7 +10,8 @@ class EditPassword extends React.Component {
 		emailText: '',
 		oldPasswordText: '',
 		newPasswordText: '',
-		retypePasswordText: ''
+		retypePasswordText: '',
+		confirmationText: ''
 	};
 	editActive = () => {
 		this.setState(() => ({
@@ -54,6 +55,9 @@ class EditPassword extends React.Component {
 					console.log(error);
 				} else {
 					this.context.functions.editToken(response.body.token)
+					this.setState(() => ({
+						confirmationText: 'Password successfully changed.'
+					}))
 				}
 			}
 		);
@@ -102,6 +106,7 @@ class EditPassword extends React.Component {
 						<button type="submit">Submit</button>
 					</form>
 				)}
+				{this.state.confirmationText && <p>{this.state.confirmationText}</p> }
 			</div>
 		);
 	}
