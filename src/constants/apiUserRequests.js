@@ -136,3 +136,22 @@ export const apiEditPassword = async (password, newPassword, email, token, callb
 		}
 	);
 };
+
+export const apiForgottenPassword = async (email, callbackFunction) => {
+	let body = { email };
+	await request(
+		{
+			method: 'POST',
+			uri: `${apiServerEnv()}/users/requestNewPassword`,
+			body,
+			json: true
+		},
+		async function(error, response, body) {
+			if (error) {
+				callbackFunction('There was an error');
+			} else {
+				callbackFunction(undefined, { response, body });
+			}
+		}
+	);
+};
